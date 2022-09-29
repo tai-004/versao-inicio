@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Alunos</h4>
+                <div class="text-right mr-3">
+                    <a href="/aluno/criar">
+                        <button type="button" class="btn mb-1 btn-info">
+                            Add <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
+                        </button>
+                    </a>
+                </div>
+                <br><br>
+
+<button
+class="px-10 py-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+>
+
+<a
+class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+href="/turma/criar"
+>       turma
+</button>
+<td>   <button
+    class="px-10 py-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+    >
+    <a
+    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+    href="/turma/cadrastrar"
+    >       Turma
+    </button> </a></td>    
+
+</tr>
+          <!--    <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th width="60%">matricula</th>
+                                <th width="20%">situação</th>
+                                <th width="20%">turma</th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                 
+            
+                        <tbody>
+                            {% if aluno %}
+                            {% for a in aluno %}
+                            <tr>
+                                <td> <a href="/aluno/{{ a.id }}/">{{ a.matricula }}</a> </td>
+                                <td> <a href="/aluno/{{ a.id }}/">{{ a.situacao }} </a> </td>
+                            
+                            {% endfor %}
+                            {% else %}
+
+                           
+                            <tr>
+                                <td>Não há pessoas cadastradas.</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->  
+
+<div class="table-responsive">
+    <table class="table header-border">
+        <thead>
+            <tr>
+                <th width="60%">aluno</th>
+                <th width="20%">turma</th>
+             
+            </tr>
+        </thead>
+ 
+
+        <tbody>
+            {% if turma %}
+            {% for t in turma %}
+            <tr>
+                <td> <a href="/turma/{{ t.id }}/">{{ turma.aluno }}</a> </td>
+                <td> <a href="/turma/{{ t.id }}/">{{ turma.turma }} </a> </td>
+            
+            {% endfor %}
+            {% else %}
+
+           
+            <tr>
+                <td>Não há pessoas cadastradas.</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}
